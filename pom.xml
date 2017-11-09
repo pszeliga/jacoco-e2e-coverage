@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.ps.e2e.jacoco</groupId>
+	<artifactId>test-coverage-example</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>test-coverage-example</name>
+	<description>Demo project for Spring Boot</description>
+
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>1.5.8.RELEASE</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+
+		<jacoco.version>0.7.5.201505241946</jacoco.version>
+		<jacoco.ant.version>0.7.8</jacoco.ant.version>
+		<app.host>localhost</app.host>
+		<app.port>36320</app.port>
+		<skip.dump>true</skip.dump>
+		<skip.int.tests.report>true</skip.int.tests.report>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco.version}</version>
+				<executions>
+					<execution>
+						<id>pull-test-data</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>dump</goal>
+						</goals>
+						<configuration>
+							<destFile>${project.build.directory}/jacoco-it-${app.host}:${app.port}.exec</destFile>
+							<address>${app.host}</address>
+							<port>${app.port}</port>
+							<reset>false</reset>
+							<skip>${skip.dump}</skip>
+						</configuration>
+					</execution>
+					<execution>
+						<id>merge-test-data</id>
+						<goals>
+							<goal>merge</goal>
+						</goals>
+						<configuration>
+							<destFile>target/jacoco-it.exec</destFile>
+							<skip>${skip.dump}</skip>
+							<fileSets>
+								<fileSet implementation="org.apache.maven.shared.model.fileset.FileSet">
+									<directory>target</directory>
+									<includes>
+										<include>*it*.exec</include>
+									</includes>
+								</fileSet>
+							</fileSets>
+						</configuration>
+					</execution>
+					<execution>
+						<id>jacoco-integration-initialize</id>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>prepare-agent-integration</goal>
+						</goals>
+						<configuration>
+							<propertyName>failsafe.argLine</propertyName>
+							<destFile>target/jacoco-it-base.exec</destFile>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<propertyName>jacoco.agent.argLine</propertyName>
+					<skip>false</skip>
+					<append>true</append>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>generate-report</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+						<configuration>
+							<skip>${skip.int.tests.report}</skip>
+							<target>
+								<!-- Execute an ant task within maven -->
+								<echo message="Generating JaCoCo Reports"/>
+								<taskdef name="report" classname="org.jacoco.ant.ReportTask">
+									<classpath path="${basedir}/target/jacoco-jars/org.jacoco.ant.jar"/>
+								</taskdef>
+								<mkdir dir="${basedir}/target/coverage-report"/>
+								<report>
+									<executiondata>
+										<fileset dir="${basedir}">
+											<include name="target/jacoco-it*.exec"/>
+										</fileset>
+									</executiondata>
+									<structure name="jacoco-multi Coverage Project">
+										<group name="jacoco-multi">
+											<classfiles>
+												<fileset dir="target/classes"/>
+											</classfiles>
+											<sourcefiles encoding="UTF-8">
+												<fileset dir="src/main/java"/>
+											</sourcefiles>
+										</group>
+									</structure>
+									<html destdir="${basedir}/target/coverage-report/html"/>
+									<xml destfile="${basedir}/target/coverage-report/coverage-report.xml"/>
+									<csv destfile="${basedir}/target/coverage-report/coverage-report.csv"/>
+								</report>
+							</target>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.jacoco</groupId>
+						<artifactId>org.jacoco.ant</artifactId>
+						<version>${jacoco.ant.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+		</plugins>
+	</build>
+</project>

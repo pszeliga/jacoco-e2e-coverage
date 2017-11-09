@@ -1,0 +1,87 @@
+2017-11-09 11:31:32,317 INFO o.a.j.u.JMeterUtils: Setting Locale to en_US
+2017-11-09 11:31:32,329 INFO o.a.j.JMeter: Loading user properties from: /usr/local/Cellar/jmeter/3.2/libexec/bin/user.properties
+2017-11-09 11:31:32,330 INFO o.a.j.JMeter: Loading system properties from: /usr/local/Cellar/jmeter/3.2/libexec/bin/system.properties
+2017-11-09 11:31:32,335 INFO o.a.j.JMeter: Copyright (c) 1998-2017 The Apache Software Foundation
+2017-11-09 11:31:32,335 INFO o.a.j.JMeter: Version 3.2 r1790748
+2017-11-09 11:31:32,335 INFO o.a.j.JMeter: java.version=1.8.0_144
+2017-11-09 11:31:32,335 INFO o.a.j.JMeter: java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+2017-11-09 11:31:32,335 INFO o.a.j.JMeter: os.name=Mac OS X
+2017-11-09 11:31:32,335 INFO o.a.j.JMeter: os.arch=x86_64
+2017-11-09 11:31:32,335 INFO o.a.j.JMeter: os.version=10.12.6
+2017-11-09 11:31:32,335 INFO o.a.j.JMeter: file.encoding=UTF-8
+2017-11-09 11:31:32,335 INFO o.a.j.JMeter: Max memory     =536870912
+2017-11-09 11:31:32,335 INFO o.a.j.JMeter: Available Processors =8
+2017-11-09 11:31:32,339 INFO o.a.j.JMeter: Default Locale=English (United States)
+2017-11-09 11:31:32,339 INFO o.a.j.JMeter: JMeter  Locale=English (United States)
+2017-11-09 11:31:32,340 INFO o.a.j.JMeter: JMeterHome=/usr/local/Cellar/jmeter/3.2/libexec
+2017-11-09 11:31:32,340 INFO o.a.j.JMeter: user.dir  =/Users/szeligap/dev/blog/jacoco-e2e-coverage
+2017-11-09 11:31:32,340 INFO o.a.j.JMeter: PWD       =/Users/szeligap/dev/blog/jacoco-e2e-coverage
+2017-11-09 11:31:32,341 INFO o.a.j.JMeter: IP: 10.40.177.229 Name: bvm00124.vcint.local FullName: 10.40.177.229
+2017-11-09 11:31:33,979 INFO o.a.j.g.a.LookAndFeelCommand: Using look and feel: com.apple.laf.AquaLookAndFeel [Mac OS X, System]
+2017-11-09 11:31:33,983 INFO o.a.j.JMeter: Loaded icon properties from org/apache/jmeter/images/icon.properties
+2017-11-09 11:31:34,898 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must contain the string: '.functions.'
+2017-11-09 11:31:34,899 INFO o.a.j.e.u.CompoundVariable: Note: Function class names must not contain the string: '.gui.'
+2017-11-09 11:31:35,932 INFO k.a.j.JMeterPluginsUtils: JMeter-Plugins.org v.1.4.0
+2017-11-09 11:31:36,463 WARN o.a.j.g.u.MenuFactory: Configuration error, probably corrupt or missing third party library(jar) ? Could not create class: kg.apc.jmeter.reporters.LoadosophiaUploaderGui. java.lang.NoClassDefFoundError: org/apache/commons/httpclient/methods/multipart/PartSource
+java.lang.NoClassDefFoundError: org/apache/commons/httpclient/methods/multipart/PartSource
+	at kg.apc.jmeter.reporters.LoadosophiaUploaderGui.init(LoadosophiaUploaderGui.java:114) ~[JMeterPlugins-Standard.jar:?]
+	at kg.apc.jmeter.reporters.LoadosophiaUploaderGui.<init>(LoadosophiaUploaderGui.java:28) ~[JMeterPlugins-Standard.jar:?]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_144]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_144]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_144]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_144]
+	at java.lang.Class.newInstance(Class.java:442) ~[?:1.8.0_144]
+	at org.apache.jmeter.gui.util.MenuFactory.initializeMenus(MenuFactory.java:505) ~[ApacheJMeter_core.jar:3.2 r1790748]
+	at org.apache.jmeter.gui.util.MenuFactory.<clinit>(MenuFactory.java:169) ~[ApacheJMeter_core.jar:3.2 r1790748]
+	at org.apache.jmeter.control.gui.WorkBenchGui.createPopupMenu(WorkBenchGui.java:119) ~[ApacheJMeter_core.jar:3.2 r1790748]
+	at org.apache.jmeter.gui.tree.JMeterTreeNode.createPopupMenu(JMeterTreeNode.java:156) ~[ApacheJMeter_core.jar:3.2 r1790748]
+	at org.apache.jmeter.gui.action.EditCommand.doAction(EditCommand.java:46) ~[ApacheJMeter_core.jar:3.2 r1790748]
+	at org.apache.jmeter.gui.action.ActionRouter.performAction(ActionRouter.java:74) ~[ApacheJMeter_core.jar:3.2 r1790748]
+	at org.apache.jmeter.gui.action.ActionRouter.lambda$actionPerformed$0(ActionRouter.java:59) ~[ApacheJMeter_core.jar:3.2 r1790748]
+	at java.awt.event.InvocationEvent.dispatch(InvocationEvent.java:311) [?:1.8.0_144]
+	at java.awt.EventQueue.dispatchEventImpl(EventQueue.java:756) [?:1.8.0_144]
+	at java.awt.EventQueue.access$500(EventQueue.java:97) [?:1.8.0_144]
+	at java.awt.EventQueue$3.run(EventQueue.java:709) [?:1.8.0_144]
+	at java.awt.EventQueue$3.run(EventQueue.java:703) [?:1.8.0_144]
+	at java.security.AccessController.doPrivileged(Native Method) ~[?:1.8.0_144]
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:80) [?:1.8.0_144]
+	at java.awt.EventQueue.dispatchEvent(EventQueue.java:726) [?:1.8.0_144]
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:201) [?:1.8.0_144]
+	at java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:116) [?:1.8.0_144]
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:105) [?:1.8.0_144]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101) [?:1.8.0_144]
+	at java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:93) [?:1.8.0_144]
+	at java.awt.EventDispatchThread.run(EventDispatchThread.java:82) [?:1.8.0_144]
+Caused by: java.lang.ClassNotFoundException: org.apache.commons.httpclient.methods.multipart.PartSource
+	at java.net.URLClassLoader.findClass(URLClassLoader.java:381) ~[?:1.8.0_144]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:424) ~[?:1.8.0_144]
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357) ~[?:1.8.0_144]
+	... 28 more
+2017-11-09 11:31:36,897 INFO o.a.j.g.u.MenuFactory: Skipping org.apache.jmeter.assertions.BSFAssertion
+2017-11-09 11:31:37,003 INFO o.a.j.g.u.MenuFactory: Skipping org.apache.jmeter.extractor.BSFPostProcessor
+2017-11-09 11:31:37,030 INFO o.a.j.g.u.MenuFactory: Skipping org.apache.jmeter.modifiers.BSFPreProcessor
+2017-11-09 11:31:37,051 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/html is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2017-11-09 11:31:37,051 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xhtml+xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2017-11-09 11:31:37,051 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for application/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2017-11-09 11:31:37,051 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/xml is org.apache.jmeter.protocol.http.parser.LagartoBasedHtmlParser
+2017-11-09 11:31:37,051 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/vnd.wap.wml is org.apache.jmeter.protocol.http.parser.RegexpHTMLParser
+2017-11-09 11:31:37,052 INFO o.a.j.p.h.s.HTTPSamplerBase: Parser for text/css is org.apache.jmeter.protocol.http.parser.CssParser
+2017-11-09 11:31:37,396 INFO o.a.j.e.KeyToolUtils: keytool found at 'keytool'
+2017-11-09 11:31:37,397 INFO o.a.j.p.h.p.ProxyControl: HTTP(S) Test Script Recorder SSL Proxy will use keys that support embedded 3rd party resources in file /usr/local/Cellar/jmeter/3.2/libexec/bin/proxyserver.jks
+2017-11-09 11:31:37,529 INFO o.a.j.g.u.MenuFactory: Skipping org.apache.jmeter.protocol.java.sampler.BSFSampler
+2017-11-09 11:31:37,562 INFO o.a.j.s.FileServer: Default base='/Users/szeligap/dev/blog/jacoco-e2e-coverage'
+2017-11-09 11:31:37,612 INFO o.a.j.g.u.MenuFactory: Skipping org.apache.jmeter.protocol.mongodb.config.MongoSourceElement
+2017-11-09 11:31:37,612 INFO o.a.j.g.u.MenuFactory: Skipping org.apache.jmeter.protocol.mongodb.sampler.MongoScriptSampler
+2017-11-09 11:31:37,714 INFO o.a.j.g.u.MenuFactory: Skipping org.apache.jmeter.timers.BSFTimer
+2017-11-09 11:31:37,739 INFO o.a.j.g.u.MenuFactory: Skipping org.apache.jmeter.visualizers.BSFListener
+2017-11-09 11:31:37,855 INFO o.a.j.s.SampleResult: Note: Sample TimeStamps are START times
+2017-11-09 11:31:37,855 INFO o.a.j.s.SampleResult: sampleresult.default.encoding is set to ISO-8859-1
+2017-11-09 11:31:37,855 INFO o.a.j.s.SampleResult: sampleresult.useNanoTime=true
+2017-11-09 11:31:37,855 INFO o.a.j.s.SampleResult: sampleresult.nanoThreadSleep=5000
+2017-11-09 11:31:58,535 INFO o.a.j.g.a.Load: Loading file: /Users/szeligap/dev/Jmeter-scripts/BettingAPI/BetSlipSave_Hurdles_PromoCashValid_BettingApi.jmx
+2017-11-09 11:31:58,536 INFO o.a.j.s.FileServer: Set new base='/Users/szeligap/dev/Jmeter-scripts/BettingAPI'
+2017-11-09 11:31:58,638 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2017-11-09 11:31:58,651 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+2017-11-09 11:31:58,653 INFO o.a.j.s.SaveService: Using SaveService properties version 3.2
+2017-11-09 11:31:58,655 INFO o.a.j.s.SaveService: Loading file: /Users/szeligap/dev/Jmeter-scripts/BettingAPI/BetSlipSave_Hurdles_PromoCashValid_BettingApi.jmx
+2017-11-09 11:31:59,110 INFO o.a.j.s.FileServer: Set new base='/Users/szeligap/dev/Jmeter-scripts/BettingAPI'
